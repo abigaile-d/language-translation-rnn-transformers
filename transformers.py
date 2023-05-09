@@ -19,11 +19,13 @@ class TransformersTools():
         self.device = device
     
     def collate(list_of_samples):
-        src_seqs = [x[0] for x in list_of_samples]
+        sorted_samples = sorted(list_of_samples, key=lambda x: x[0].shape[0], reverse=True)
+
+        src_seqs = [x[0] for x in sorted_samples]
         src_seqs = pad_sequence(src_seqs)
         src_mask = torch.eq(src_seqs, PADDING_VALUE)
         
-        tgt_seqs = [x[1] for x in list_of_samples]
+        tgt_seqs = [x[1] for x in sorted_samples]
         tgt_seqs = pad_sequence(tgt_seqs)
         tgt_seqs = torch.cat((torch.tensor([SOS_token] * src_seqs.shape[1])[None, :], tgt_seqs), dim=0)
 
