@@ -55,7 +55,7 @@ BLUE Scores:
 | RNN   | 0.967 | 0.477 |
 | Transformers | 0.939 | 0.588 |
 
-The testing results based on BLEU score align with our expectations that the Transformer model would outperform the RNN model. The comparison of sample sentences translated by both models against the actual translation further confirms this observation. While there were some incorrect translations, many sentences were accurately translated. Given the limited size of the dataset, the models' overall performance is commendable.
+The testing results based on BLEU score align with our expectations that the Transformer model would outperform the RNN model. The comparison of sample sentences translated by both models against the actual translation further confirms this observation. While there were some incorrect translations, many sentences were accurately translated, especially in the Transformers' results. Given the limited size of the dataset, the models' overall performance is commendable.
 
 
 |    | Source                                      | Actual Translation                | RNN Translation                   | Transformer Translation           |
